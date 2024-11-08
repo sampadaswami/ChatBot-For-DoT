@@ -184,10 +184,10 @@ def message():
 
       ## Additional response for "Adjunct Faculty" or similar phrases
     elif any(keyword in user_message for keyword in ['adjunct faculty', 'adjunct professor', 'faculty', 'staff']):
-        bot_response = "You can find more information about the Adjunct Faculty here: <a href='/adjunct_faculty'>Click to View Adjunct Faculty Page</a>"
+        bot_response = "Adjunct Faculty here: https://drive.google.com/file/d/1-dM98YIDl8g04UsSTDISOwKLw-fp1TXN/view?usp=sharing"
 
     elif any(keyword in user_message for keyword in ['visiting faculty', 'visiting professor', 'staff']):  
-        bot_response = "You can find more information about the Visiting Faculty here: <a href='/visiting_faculty'>Click to View Visiting Faculty Page</a>"
+        bot_response = "Visiting Faculty here: https://drive.google.com/file/d/1xU33RQLBR93PuwKXD4jCzqboF5CuhZlx/view?usp=sharing"
  
     # If the user asks for subjects in a specific M-Tech course
     elif 'subject' in user_message and any(course in user_message for course in mtech_subjects.keys()):
@@ -213,15 +213,6 @@ def message():
         bot_response = "Please specify if you want information about M-Tech, PG Diploma, or Undergraduate courses!"
 
     return jsonify({'response': bot_response})
-
-@app.route('/adjunct_faculty')
-def adjunct_faculty():
-    return render_template('Adjunct_Faculty.html')
-s
-@app.route('/visiting_faculty')
-def visiting_faculty():
-    return render_template('Visiting_Faculty.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

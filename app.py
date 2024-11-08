@@ -155,6 +155,9 @@ def message():
         # Additional response for "thank you" or similar phrases
     elif any(keyword in user_message for keyword in ['thank you', 'thanks', 'appreciate it']):
         bot_response = "You're welcome! Please provide your feedback. https://forms.gle/ivfqJatEswdSa1r78"
+        # Additional response for "events" or similar phrases
+    elif any(keyword in user_message for keyword in ['Events', 'dot events', 'event', 'events','appreciate it']):
+        bot_response = "To see event photos, click on this Telegram link: https://t.me/+bORnt37xEMxiYTY1"
     # If the user asks for subjects in a specific M-Tech course
     elif 'subject' in user_message and any(course in user_message for course in mtech_subjects.keys()):
         course = None
@@ -182,3 +185,4 @@ def message():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+

@@ -168,6 +168,10 @@ def message():
     elif any(keyword in user_message for keyword in ['Email', 'email', 'Email ID', 'Mail', 'appreciate it']):
         bot_response = "hodtech@unipune.ac.in"
 
+       ## Additional response for "Visiting Faculty" or similar phrases
+    elif any(keyword in user_message for keyword in ['visiting faculty', 'visiting professor', 'staff']):
+        bot_response = "Visiting Faculty here: https://drive.google.com/file/d/1xU33RQLBR93PuwKXD4jCzqboF5CuhZlx/view?usp=sharing"
+
       ## Additional response for "Address" or similar phrases
     elif any(keyword in user_message for keyword in ['Address', 'address', 'Location', 'location', 'appreciate it']):
         bot_response = """
@@ -186,8 +190,7 @@ def message():
     elif any(keyword in user_message for keyword in ['adjunct faculty', 'adjunct professor', 'faculty', 'staff']):
         bot_response = "Adjunct Faculty here: https://drive.google.com/file/d/1-dM98YIDl8g04UsSTDISOwKLw-fp1TXN/view?usp=sharing"
 
-    elif any(keyword in user_message for keyword in ['visiting faculty', 'visiting professor', 'staff']):  
-        bot_response = "Visiting Faculty here: https://drive.google.com/file/d/1xU33RQLBR93PuwKXD4jCzqboF5CuhZlx/view?usp=sharing"
+
  
     # If the user asks for subjects in a specific M-Tech course
     elif 'subject' in user_message and any(course in user_message for course in mtech_subjects.keys()):

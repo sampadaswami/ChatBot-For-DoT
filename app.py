@@ -155,9 +155,36 @@ def message():
         # Additional response for "thank you" or similar phrases
     elif any(keyword in user_message for keyword in ['thank you', 'thanks', 'appreciate it']):
         bot_response = "You're welcome! Please provide your feedback. https://forms.gle/ivfqJatEswdSa1r78"
+
         # Additional response for "events" or similar phrases
     elif any(keyword in user_message for keyword in ['Events', 'dot events', 'event', 'events','appreciate it']):
         bot_response = "To see event photos, click on this Telegram link: https://t.me/+bORnt37xEMxiYTY1"
+
+       ## Additional response for "Telephone" or similar phrases
+    elif any(keyword in user_message for keyword in ['Telephone', 'telephone', 'Telephone No', 'Contact Number', 'appreciate it']):
+        bot_response = "+91-020-25622632/33"
+
+       ## Additional response for "Email" or similar phrases
+    elif any(keyword in user_message for keyword in ['Email', 'email', 'Email ID', 'Mail', 'appreciate it']):
+        bot_response = "hodtech@unipune.ac.in"
+
+      ## Additional response for "Address" or similar phrases
+    elif any(keyword in user_message for keyword in ['Address', 'address', 'Location', 'location', 'appreciate it']):
+        bot_response = """
+    Department of Technology,
+    SPPU,
+    Ganeshkhind Road,  
+    Pune - 411 007  
+    Maharashtra State,  
+    India.  
+
+    Location  
+    https://goo.gl/maps/3Uy4NfXhYesAwwEe6
+    """
+
+
+
+
     # If the user asks for subjects in a specific M-Tech course
     elif 'subject' in user_message and any(course in user_message for course in mtech_subjects.keys()):
         course = None

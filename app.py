@@ -167,7 +167,15 @@ def message():
        ## Additional response for "Email" or similar phrases
     elif any(keyword in user_message for keyword in ['Email', 'email', 'Email ID', 'Mail', 'appreciate it']):
         bot_response = "hodtech@unipune.ac.in"
-
+        
+       ## Additional response for "HOD" or similar phrases
+    elif any(keyword in user_message for keyword in ['HOD', 'hod', 'HoD', 'Mail', 'Head of Department']):
+        bot_response = "Dr. Aditya Abhyankar"
+        
+          ## Additional response for "HOD" or similar phrases
+    elif any(keyword in user_message for keyword in ['DS Course Coordinator', 'Data Science Course Coordinator', 'DS Course Coordinator', 'Head of DS']):
+        bot_response = "Dr. Manisha Bharati"
+        
        ## Additional response for "Visiting Faculty" or similar phrases
     elif any(keyword in user_message for keyword in ['visiting faculty', 'visiting professor', 'staff']):
         bot_response = "Visiting Faculty here: https://drive.google.com/file/d/1xU33RQLBR93PuwKXD4jCzqboF5CuhZlx/view?usp=sharing"
@@ -213,7 +221,7 @@ def message():
         else:
             bot_response = "Please mention the correct M-Tech course!"
     else:
-        bot_response = "Please specify if you want information about M-Tech, PG Diploma, or Undergraduate courses!"
+        bot_response = "Please specify if you want information about Undergraduate Courses, PG Diploma, M-Tech, Faculty, Events, Contact Information, Address!"
 
     return jsonify({'response': bot_response})
 
